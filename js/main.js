@@ -23,7 +23,7 @@ function codeAddress() {
                 success: function(data) {
                     var fips = data.Block.FIPS;
                     var blockgroup = fips.substr(0,12);
-                    console.log(blockgroup);
+                    //console.log(blockgroup);
                     $.ajax({
                         dataType: "json",
                         url: "http://laiapi-placematters.dotcloud.com/blockgroup/" + blockgroup,
