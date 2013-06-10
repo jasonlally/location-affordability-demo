@@ -1,4 +1,4 @@
 location-affordability-demo
 ===========================
 
-Location Affordability Demo
+This demo application uses the prototype [Location Affordability API](http://www.github.com/jasonlally/location-affordability-api)
