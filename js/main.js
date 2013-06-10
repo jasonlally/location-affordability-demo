@@ -17,11 +17,20 @@ function codeAddress() {
             lat = results[0].geometry.location.lat();
             lon = results[0].geometry.location.lng();
             $.ajax({
-                dataType: "json",
+                dataType: "jsonp",
                 url: "http://data.fcc.gov/api/block/find",
-                data: { format: "json", latitude: lat, longitude : lon  },
+                data: { format: "jsonp", latitude: lat, longitude : lon  },
                 success: function(data) {
-                    //console.log(data);
+                    var fips = data.Block.FIPS;
+                    var blockgroup = fips.substr(0,12);
+                    console.log(blockgroup);
+                    $.ajax({
+                        dataType: "json",
+                        url: "http://laiapi-placematters.dotcloud.com/blockgroup/" + blockgroup,
+                        success: function(data) {
+                            console.log(data);
+                        }
+                    });
                 }
             });
         } else {
