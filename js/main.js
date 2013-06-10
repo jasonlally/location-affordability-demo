@@ -28,6 +28,7 @@ function codeAddress() {
                         dataType: "json",
                         url: "http://laiapi-placematters.dotcloud.com/blockgroup/" + blockgroup,
                         success: function(data) {
+                            $('#data').html('');
                             var keyIndex;
                             var div, hh;
                             var hh_types = { "a" : "Regional Typical",
